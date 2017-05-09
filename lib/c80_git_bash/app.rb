@@ -58,15 +58,15 @@ module C80GitBash
           # noinspection RubyEmptyRescueBlockInspection
           begin
             g = Git.open(d)
-            log_last = g.log.last
+            log_last = g.log.first
 
             d = format_git_date(log_last.date)
             m = format_git_message_join(log_last.message)
 
 
-            puts "\t#{f}#{d} #{m}"
+            puts "  #{f}#{d} #{m}"
           rescue Git::GitExecuteError
-            puts "\t#{f}[#{''.ljust(10,'-')}] #{RED}GitExecuteError#{CLEAR}"
+            puts "  #{f}[#{''.ljust(10,'-')}] #{RED}GitExecuteError#{CLEAR}"
           rescue ArgumentError
           end
 

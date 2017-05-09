@@ -12,7 +12,7 @@ module C80GitBash
     CYAN = "\e[36m"
     WHITE = "\e[37m"
 
-    LOG_MESSAGE_LINE_SIZE = 60
+    LOG_MESSAGE_LINE_SIZE = 85
     FILENAME_PADDING = 25
     DATE_PADDING = 13
 
@@ -34,7 +34,7 @@ module C80GitBash
 
     def format_git_message_join(s)
       m = self.format_git_message(s)
-      m.join("#{BLACK}\n\t#{''.ljust(FILENAME_PADDING + DATE_PADDING - 1, '.')}#{CLEAR} ")
+      m.join("#{BLACK}\n  #{''.ljust(FILENAME_PADDING + DATE_PADDING - 1, '.')}#{CLEAR} ")
     end
 
     def format_git_date(d)
