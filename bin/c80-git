@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+# noinspection RubyEmptyRescueBlockInspection
+begin
+  require 'rubygems'
+  gem 'c80_git_bash'
+rescue LoadError
+end
+
+require 'c80_git_bash'
+C80GitBash.app.run
